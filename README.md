@@ -6,4 +6,4 @@ A friendly-ish introduction to FRC Programming. While I know WPILib exists, this
 
 To access the instructions, check out the Github Wiki attached to this repository:
 
-![Wiki Location](https://i.imgur.com/QwWFy2p.png)
+![Wiki Location](https://i.imgur.com/8yQiBAf.png)
