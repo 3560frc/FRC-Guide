@@ -18,4 +18,11 @@ public final class Constants {
         public static final Color Red = new Color(0.561, 0.232, 0.114);
         public static final Color Yellow = new Color(0.361, 0.524, 0.113);
     }
+
+    public static final int intakeID = 6;
+    public static final double intakeSpeed = 0.7;
+
+    public static final int shooter1ID = 7;
+    public static final int shooter2ID = 8;
+    public static final double shooterSpeed = 0.7;
 }

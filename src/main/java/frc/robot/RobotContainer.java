@@ -1,11 +1,7 @@
 package frc.robot;
 
-import frc.robot.commands.ColorCommand;
-import frc.robot.commands.DriveCommand;
-import frc.robot.commands.ExampleCommand;
-import frc.robot.subsystems.ColorSubsystem;
-import frc.robot.subsystems.DriveSubsystem;
-import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.commands.*;
+import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -23,6 +19,12 @@ public class RobotContainer {
     private ColorSubsystem colorSubsystem = new ColorSubsystem();
     private ColorCommand colorCommand = new ColorCommand(colorSubsystem, Constants.Colors.Blue);
 
+    private Intake intake = new Intake();
+    private Shooter shooter = new Shooter();
+
+    private IntakeCommand intakeCommand = new IntakeCommand(intake);
+    private ShooterCommand shooterCommand = new ShooterCommand(shooter);
+
     public RobotContainer() {
         configureButtonBindings();
 
@@ -31,6 +33,8 @@ public class RobotContainer {
 
     private void configureButtonBindings() {
         new JoystickButton(controller, Button.kA.value).whenPressed(colorCommand);
+        new JoystickButton(controller, Button.kBumperLeft.value).toggleWhenPressed(intakeCommand);
+        new JoystickButton(controller, Button.kBumperRight.value).toggleWhenPressed(shooterCommand);
     }
 
     public Command getAutonomousCommand() {
